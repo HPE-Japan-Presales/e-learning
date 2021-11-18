@@ -1,10 +1,10 @@
 # Ezmeral Container Platform 5.3インストール
 ## 改訂履歴
 
-| バージョン | 日付 | 改訂者 |
-| :---: | :---: | :---: |
-| 0.1 | 2021.10.27 | [Taku Kimura @HPE Japan Presales](taku.kimura@hpe.com) |
-|  |  |  |
+| バージョン | 日付 | 改訂者 | 更新内容 |
+| :---: | :---: | :---: | :---: |
+| 0.1 | 2021.10.27 | [Taku Kimura @HPE Japan Presales](taku.kimura@hpe.com) | 初版 |
+|0.1.1  | 2021.11.18 | [Taku Kimura @HPE Japan Presales](taku.kimura@hpe.com) | proxy設定の誤記を訂正 |
 |  |  |  |
 
 ## HW要件
@@ -64,7 +64,7 @@ export EZMERAL_CONTROLLERS=192.168.101.151,192.168.101.152,192.168.101.153
 export EZMERAL_WORKERS=192.168.101.161,192.168.101.162,192.168.101.163
 export EZMERAL_GATEWAYS=192.168.101.171,192.168.101.172
 export NO_PROXY_CIDRS=192.168.99.0/24,192.168.100.0/24,192.168.101.0/24,10.192.0.0/12,10.96.0.0/12
-export NO_PROXY_DOMAINS=*.ebc-jpn.io,*.svc,*.cluster.local,*.hpecplocal
+export NO_PROXY_DOMAINS=.ebc-jpn.io,.svc,.cluster.local,.hpecplocal
 export PROXY=http://192.168.101.10:8888
 export http_proxy=$PROXY
 export HTTP_PROXY=$http_proxy
