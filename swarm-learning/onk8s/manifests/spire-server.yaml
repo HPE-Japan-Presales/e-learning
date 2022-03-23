@@ -1,0 +1,87 @@
+# This manifest for HPE Eameral Runtime
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spire-server
+  namespace: swarm
+  labels:
+    app: spire-server
+spec:
+  restartPolicy: Always
+  volumes:
+  - name: conf
+    configMap:
+      name: spire-server-conf
+      items:
+        - key: server.conf
+          path: server.conf
+  containers:
+  - name: spire-server
+    image: <spire-server:tag>
+    volumeMounts:
+    - name: conf
+      mountPath: /spire/conf/server
+    ports:
+    - containerPort: 8081
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: 500m
+      limits:
+        memory: 1Gi
+        cpu: 500m
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spire-server-conf
+  namespace: swarm
+data:
+  server.conf: |
+    server {
+        bind_address = "0.0.0.0"
+        bind_port = "8081"
+        trust_domain = "swarm.learning"
+        data_dir = "/spire/data/server"
+        log_level = "INFO"
+        ca_ttl = "168h"
+        default_svid_ttl = "48h"
+
+        ca_subject {
+            common_name = "Swarm-Learning"
+        }
+    }
+
+    plugins {
+        DataStore "sql" {
+            plugin_data {
+                database_type = "sqlite3"
+                connection_string = "/spire/data/server/datastore.sqlite3"
+            }
+        }
+
+        KeyManager "memory" {
+            plugin_data {}
+        }
+
+        NodeAttestor "join_token" {
+            plugin_data {}
+        }
+
+        NodeResolver "noop" {
+            plugin_data {}
+        }
+    }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spire-server
+  namespace: swarm
+spec:
+  selector:
+    app: spire-server
+  ports:
+  - port: 8081
+  type: NodePort
