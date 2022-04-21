@@ -18,3 +18,5 @@ Coming soon
 - VMとコンテナのハイブリッド環境で何かサービス作ってみる  
 Coming soon
 
+- [トラブルシュート系 ](tkg/trouble_shoot)  
+検証の際に出会った問題等
