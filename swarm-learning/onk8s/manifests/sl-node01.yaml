@@ -92,7 +92,7 @@ spec:
       value: "sl-node01"
   containers:
   - name: sl-node01
-    image: 192.168.101.100:5000/hub.myenterpriselicense.hpe.com/hpe_eval/swarm-learning/sl-tf:0.3.0
+    image: <sl-tf:tag>
     securityContext:
       runAsUser: 0
     resources:
