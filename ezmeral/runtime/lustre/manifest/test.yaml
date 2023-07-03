@@ -1,0 +1,30 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: test
+  namespace: lustre-csi
+spec:
+  hostNetwork: true
+  containers:
+    - name: test
+      securityContext:
+        privileged: true
+        capabilities:
+          add: ['SYS_ADMIN']
+        allowPrivilegeEscalation: true
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      command:
+        - "sh"
+        - "-c"
+      args:
+        - "sleep 1000"
+      volumeMounts:
+        - name: host
+          mountPath: /host
+          mountPropagation: Bidirectional
+  volumes:
+    - name: host
+      hostPath:
+        path: /
+        type: Directory

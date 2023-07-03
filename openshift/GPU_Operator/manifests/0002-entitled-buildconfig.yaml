@@ -1,0 +1,38 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: entitled-buildconfig
+  name: entitled-buildconfig
+spec: {}
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: entitled-buildconfig
+  name: entitled-buildconfig
+spec:
+  runPolicy: "Serial"
+  triggers:
+    - type: "ConfigChange"
+    - type: "ImageChange"
+  source:
+    dockerfile: "FROM registry.access.redhat.com/ubi8:latest\nCOPY *.pem /etc/pki/entitlement/entitlement.pem\nCOPY *.pem /etc/pki/entitlement/entitlement-key.pem\nRUN dnf search kernel-devel --showduplicates"
+    secrets:
+    - secret:
+        name: entitlement
+    env:
+      - name: http_proxy
+        value: <YOUR IP>
+      - name: https_proxy
+        value: <YOUR IP>
+  strategy:
+    dockerStrategy:
+      buildArgs:
+        - name: "DRIVER_VERSION"
+          value: "418.87.01"
+  output:
+    to:
+      kind: ImageStreamTag
+      name: entitled-buildconfig:latest

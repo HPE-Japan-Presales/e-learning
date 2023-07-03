@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  serviceName: "nginx"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx-unprivileged:latest
+        ports:
+        - containerPort: 80
+          name: nginx
+        volumeMounts:
+        - name: cache
+          mountPath: /cache
+  volumeClaimTemplates:
+  - metadata:
+      name: cache
+    spec:
+      accessModes: 
+        - "ReadWriteOnce"
+      storageClassName: "tak-tkgs-storage"
+      resources:
+        requests:
+          storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+  type: LoadBalancer

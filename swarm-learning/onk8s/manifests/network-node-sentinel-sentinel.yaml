@@ -1,0 +1,158 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: null
+  name: network-node-sentinel
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: network-node-sentinel
+rules:
+- apiGroups: ["*"]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+- apiGroups: ["*"]
+  resources: ["pods/exec"]
+  verbs: ["create"]
+- apiGroups: ["*"]
+  resources: ["secrets"]
+  verbs: ["get", "create", "list", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: network-node-sentinel
+subjects:
+  - kind: ServiceAccount
+    name: network-node-sentinel
+roleRef:
+  kind: Role
+  apiGroup: rbac.authorization.k8s.io
+  name: network-node-sentinel
+---
+# This is dummy token
+# Updated by spire-token-generator init container
+# Name should be unique on each network node
+apiVersion: v1
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: network-node-sentinel
+type: Opaque
+data:
+  token: ZHVtbXkK
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: network-node-sentinel
+  namespace: swarm
+spec:
+  selector:
+    app: network-node-sentinel
+  ports:
+  - name: fs
+    port: 30305
+  - name: api
+    port: 30304
+  - name: p2p
+    port: 30303
+  type: NodePort
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: network-node-sentinel
+  labels:
+     app: network-node-sentinel
+spec:
+  terminationGracePeriodSeconds: 60
+  restartPolicy: Always
+  serviceAccountName: network-node-sentinel
+  initContainers:
+  - name: spire-token-generator
+    image: docker.io/fideltak/spire-token-generator:1.20.11_v0.4
+    resources:
+      requests:
+        memory: 0.2Gi
+        cpu: 200m
+      limits:
+        memory: 0.2Gi
+        cpu: 200m
+    env:
+    - name: SPIRE_POD_LABEL
+      value: "app=spire-server"
+    - name: SPIRE_SPIFFE_ID
+      value: "spiffe://swarm.learning/swarm/sn-agent"
+    - name: SPIRE_TOKEN_SECRET_NAME
+      value: "network-node-sentinel"
+  containers:
+  - name: network-node-sentinel
+    image: <sn:tag>
+    securityContext:
+      runAsUser: 0
+    resources:
+      requests:
+        memory: 48Gi
+        cpu: 36
+      limits:
+        memory: 48Gi
+        cpu: 36
+    ports:
+    - containerPort: 30303
+    - containerPort: 30304
+    - containerPort: 30305
+    args:
+    - "-joinToken"
+    - "$(SPIRE_JOIN_TOKEN)"
+    - "-serverAddress"
+    - "$(SPIRE_SERVER_IP)"
+    - "-serverPort"
+    - "$(SPIRE_SERVER_PORT)"
+    - "-insecureBootstrap"
+    - "true"
+    - "-logLevel"
+    - "debug"
+    env:
+    - name: SPIRE_SERVER_IP
+      value: "spire-server"
+    - name: SPIRE_SERVER_PORT
+      value: "8081"
+    - name: SPIRE_JOIN_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: network-node-sentinel
+          key: token
+    - name: SWARM_LICENSE_AUTOPASSJ_SERVER_PRIMARY_IP
+      value: "apls"
+    - name: SWARM_LICENSE_AUTOPASSJ_SERVER_PRIMARY_PORT
+      value: "5814"
+      # The IP address or DNS name of the host system on which this
+      # Swarm Network node will be created.
+    - name: THIS_NODE_IP
+      value: "network-node-sentinel"
+
+      # The IP address or DNS name of the host system on which the
+      # Sentinel Swarm Network node is running. If this parameter
+      # is not specified, this Swarm Network node will make itself
+      # the sentinel
+    - name: SENTINEL_NODE_IP
+      value: "network-node-sentinel"
+
+      # Host port for the Sentinel Swarm Network node's File Server.
+    - name: SENTINEL_FS_PORT
+      value: "30305"
+
+      # Host port for this Swarm Network node's API Server.
+    - name: API_SERVER_PORT
+      value: "30304"
+
+      # Host port for this Swarm Network node's File Server
+    - name: SN_FS_PORT
+      value: "30305"
+
+      # Host port for this Swarm Network node's P2P communications.
+    - name: ETH_PORT
+      value: "30303"
