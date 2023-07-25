@@ -10,8 +10,11 @@
 - [Ezmeral Runtime Enterpriseをアップグレード](runtime/upgrade)
 
 
-### Ezmeral Data Fabric
-- [Ezmeral Data Fabric6.2 Enterprise Editionを最小構成でインストール](fabric/6.2/installation)  
+### Ezmeral Data Fabric Customer Managed
+- [Ezmeral Data Fabric6.2 Enterprise Editionを最小構成でインストール](fabric-cm/6.2/installation)  
+
+### Ezmeral Data Fabric (aaS版)
+- [aaS版Ezmeral Data Fabric 7.3をインストール](fabric/7.3/installation)  
 
 ### Ezmeral Unified Analytics
 - [最小構成でオンプレにインストール](ua/installation)  
