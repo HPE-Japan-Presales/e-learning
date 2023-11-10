@@ -16,6 +16,7 @@
 ### Ezmeral Data Fabric (aaS版)
 - [aaS版Ezmeral Data Fabric 7.3をインストール](fabric/7.3/installation)  
 
-### Ezmeral Unified Analytics
-- [最小構成でオンプレにインストール](ua/installation)  
+### Ezmeral Unified Analytics(UA)
+- [UA1.0を最小構成でインストール](ua/installation_1_0)  
+- [UA1.2を冗長構成でインストール](ua/installation_1_2)
 - [クエリエディターを使ってみる](ua/query)
