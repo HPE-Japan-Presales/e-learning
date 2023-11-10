@@ -421,4 +421,4 @@ LDAP/ADに登録したUA管理者ユーザーでGUIにアクセスします。
 ![](pics/ua03.png)
 
 こんなに大量のOSSをエンタープライズサポート付きの従量課金で使用することができます。
-![](pics/sw_list01.png)
+![](pics/sw_list.png)
