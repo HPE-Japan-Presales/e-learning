@@ -1,5 +1,5 @@
-# Azure Virtual Desktop for Azure Stack HCI
-このレポジトリではAzure Arc Enabled Serviceを利用したWebAppサービスデプロイ関連のナレッジをまとめています。
+# Azure Arc Enabled Service
+このレポジトリではAzure Arc Enabled Serviceに対応したAzureサービスのオンプレ利用に関するナレッジをまとめています。
 
 ## 目次
 ### Azure Arc Enabled Service
