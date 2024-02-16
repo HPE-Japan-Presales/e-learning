@@ -12,8 +12,8 @@ AVDのセッションホストをAzure Stack HCI上にデプロイして利用�
 - [Azure K8s Service on Azure Stack HCIを使ってみる](aks-on-azshci)  
 AKSをAzure Stack HCI上にデプロイしてコンテナを動かしてみる
 
-- [Azure K8s Service on Azure Stack HCIを使ってみる](arc-enabled-infrastructure)  
+- [Azure Arc Enabled Infrastructureを使ってみる](arc-enabled-infrastructure)  
 Azure Arcでオンプレの監視をしてみる
 
-- [Azure K8s Service on Azure Stack HCIを使ってみる](arc-enabled-service)  
+- [Azure Arc Enabled Serviceを使ってみる](arc-enabled-service)  
 Azure Arcに対応したAzure PaaSをオンプレで動かしてみる
