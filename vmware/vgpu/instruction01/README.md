@@ -1,8 +1,7 @@
 # AIワークロード用の仮想GPU利用について
 vGPU Software v13.0より仮想GPUの利用体系が変更になり、<br>
-ハイパーバイザーにより使用できるソフトウェアとエディションが異なるので注意が必要です。<br>
+ハイパーバイザーにより使用できるソフトウェアとエディションが異なるので注意が必要でしたが、v15.0よりソフトウェアによらず基本的にAI用途はNVIDIA AI Enterprise、VDI用途はvGPU Softwareとシンプルになりました。<br>
 従来のvGPU Software（vWS/vPC/vApps/vCS）とNVIDIA AI Enterprise(vCS)用途で異なるvGPU Managerとライセンス体系を取るため、下記にまとめてみます。
-
 
 ## vGPU Software / NVIDIA AI Enterprise
 
@@ -10,12 +9,16 @@ vGPU Software v13.0より仮想GPUの利用体系が変更になり、<br>
 
 | ハイパーバイザー | エディション | 必要なソフトウェア |
 | :---: | :---: | :---: |
-| RHEL with KVM / RHEV | All | vGPU Software |
-| Ubuntu with KVM | All | vGPU Software |
-| Nutanix AHV | All | vGPU Software |
-| VMware | vWS/vPC/vApps | vGPU Software |
+| RHEL with KVM | vCS | NVIDIA AI Enterprise |
+| RHEL with KVM | vWS/vPC/vApps | vGPU Software |
+| Ubuntu with KVM | vCS | NVIDIA AI Enterprise |
+| Ubuntu with KVM | vWS/vPC/vApps | vGPU Software |
+| Nutanix AHV | vCS | NVIDIA AI Enterprise |
+| Nutanix AHV | vWS/vPC/vApps | vGPU Software |
 | VMware | vCS | NVIDIA AI Enterprise |
-| Azure Stack HCI | vWS/vPC/vApps  | vGPU Software |
+| VMware | vWS/vPC/vApps | vGPU Software |
+| Azure Stack HCI  | vCS  |  vGPU Software(DDA Only) |
+| Azure Stack HCI  | vWS/vPC/vApps  |  vGPU Software(GPU-Partitioning) |
 |  |  |  |
 
 - ちなみにWindowsはDDAのみ、いわゆるvGPUとしての使い方だったRemoteFXは現行OSバージョンでは廃止、今後のロードマップに同等機能追加の話はあるみたいですが時期は未定。

@@ -36,3 +36,7 @@ vGPU Managerのインストール、インストールイメージ入手、vCent
 
 - [vGPU用ライセンスサーバーを構築する](vgpu/installation02)  
 ライセンスサーバー構築と、vGPUライセンス管理について
+
+### GPU Paththrough
+- [仮想マシンでGPUパススルーを利用する](gpu-passthrough)  
+GPUパススルーの利用方法について
