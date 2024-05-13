@@ -19,4 +19,5 @@
 ### Ezmeral Unified Analytics(UA)
 - [UA1.0を最小構成でインストール](ua/installation_1_0)  
 - [UA1.2を冗長構成でインストール](ua/installation_1_2)
+- [UA1.4を冗長構成でインストール](ua/installation_1_4)
 - [クエリエディターを使ってみる](ua/query)
