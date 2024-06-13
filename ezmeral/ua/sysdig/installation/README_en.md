@@ -22,7 +22,7 @@ Login to Sysdig SaaS.
 Choose your k8s cluster type. Need to choose *Kubernetes Cluster* for Ezmeral Unified Analytics k8s cluster.
 ![image](./pics/installation02.png)
 
-Put your *Cluster Name* and copy and paster the commands displayed to your notebook.
+Put your *Cluster Name* and copy and paste the commands displayed to your notebook.
 ![image](./pics/installation03.png)
 
 Execute below commands on the laptop or server installed HELM.
