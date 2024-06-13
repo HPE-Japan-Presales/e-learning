@@ -21,3 +21,4 @@
 - [UA1.2を冗長構成でインストール](ua/installation_1_2)
 - [UA1.4を冗長構成でインストール](ua/installation_1_4)
 - [クエリエディターを使ってみる](ua/query)
+- [Ezmeral Unified AnalyticsにISVソフトウェアとしてSysdigをインストールする方法](ua/sysdig/installation)

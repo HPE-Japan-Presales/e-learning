@@ -15,7 +15,7 @@ Search Sysdig in AWS marketplace to register your account.
 
 After a few moments, you can get a main from Sysdig. And then register your account.
 
-## Sysdigのインストール
+## Sysdig Installation
 Login to Sysdig SaaS.
 ![image](./pics/installation01.png)
 
@@ -38,7 +38,7 @@ After excuting these commands, you can see tar.gz file. Move to this file to you
 And then, You need to create a namespace *sysdig-agent* for Sysdig by kubectl command.
 
 ```bash
-k create ns sysdig-agent
+kubectl create ns sysdig-agent
 ```
 
 Login to Ezmeral Unified Analytics as an admin user. Choose *Tools & Frameworks* and *Import Framework* to import Sysdig agent. 
@@ -85,4 +85,4 @@ When the status is *Ready*, You can see the various information of Ezmeral Unifi
 ![image](./pics/post-installation04.png)
 ![image](./pics/post-installation05.png)
 
-Now you can use Ezmeral Unified Analytics more security environment.
+Now you can use Ezmeral Unified Analytics more secure environment.

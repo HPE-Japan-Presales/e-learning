@@ -39,7 +39,7 @@ tar.gzファイルが生成されましたら、Ezmeral Unified AnalyticsにWeb�
 Ezmeral Unified Analyticsのk8sクラスタにkubectlで接続して、*sysdig-agent*のネームスペースを作成します。
 
 ```bash
-k create ns sysdig-agent
+kubectl create ns sysdig-agent
 ```
 
 Ezmeral Unified Analyticsに管理者ユーザーでログインして、*Tools & Frameworks*から*Import Framework*を選択します。
