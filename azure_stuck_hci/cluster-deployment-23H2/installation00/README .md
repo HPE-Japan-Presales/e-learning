@@ -3,7 +3,7 @@
 
 ## 目次
 ### Azure Stack HCI (Azure Stack HCI OS 23H2 - )
-- [環境説明：デプロイを実施する環境についての説明](installation00)  
+- [環境説明：デプロイを実施する環境についての説明](../installation00)  
 
 デプロイを実施する環境のイメージ図は以下になります。
 ![](pics/kankyo_image00.PNG)
