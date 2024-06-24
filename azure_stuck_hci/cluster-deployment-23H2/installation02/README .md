@@ -3,7 +3,7 @@
 
 ## 目次
 ### Azure Stack HCI (Azure Stack HCI OS 23H2 - )
-- [Azure Stack HCIデプロイメント②：Azure Stack HCI OS をインストールする](installation02)  
+- [Azure Stack HCIデプロイメント②：Azure Stack HCI OS をインストールする](../installation02)  
 
 #### インストール前の事前準備
 インストール前にAzure Stack HCI バージョン 23H2 のデプロイの前提条件を以下URLで確認します。
