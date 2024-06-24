@@ -3,7 +3,7 @@
 
 ## 目次
 ### Azure Stack HCI (Azure Stack HCI OS 23H2 - )
-- [Azure Stack HCIデプロイメント①：Active Directory を準備する](installation01)
+- [Azure Stack HCIデプロイメント①：Active Directory を準備する](../installation01)
 
 AD/DNS自体の構築手順は割愛します。DNS構築後、今回の環境ではインターネットを使用できるようにするため以下のように8.8.8.8へフォワードする設定を入れています。
 
