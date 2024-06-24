@@ -9,8 +9,8 @@
 
 - [Azure Stack HCIデプロイメント②：Azure Stack HCI OS をインストールする](installation02)  
 
-- [Azure Stack HCIデプロイメント②：Azure Stack HCI OS を設定する](installation03)  
+- [Azure Stack HCIデプロイメント③：Azure Stack HCI OS を設定する](installation03)  
 
-- [Azure Stack HCIデプロイメント③：Azure Arc にサーバーを登録する](installation04)  
+- [Azure Stack HCIデプロイメント④：Azure Arc にサーバーを登録する](installation04)  
 
-- [Azure Stack HCIデプロイメント④：Azure portal経由でデプロイする](installation05)  
+- [Azure Stack HCIデプロイメント⑤：Azure portal経由でデプロイする](installation05)  
