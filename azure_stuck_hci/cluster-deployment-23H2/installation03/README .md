@@ -19,7 +19,7 @@ OSインストール直後の画面は以下になります。引き続きiLOへ
 ![](pics/02.PNG)
 
 パスワードを設定します。
-<span style="color:red;">注意：パスワードには以下要件があります。しかしながらこの時点では要件を満たさないパスワードをAzure Stack HCI OSへ設定できてしまいますのでご注意ください。もし要件を満たさないパスワードを設定した場合は後に実行される事前チェックでエラーとなります。</span>
+`注意：パスワードには以下要件があります。しかしながらこの時点では要件を満たさないパスワードをAzure Stack HCI OSへ設定できてしまいますのでご注意ください。もし要件を満たさないパスワードを設定した場合は後に実行される事前チェックでエラーとなります。`
 
 ![](pics/password.PNG)
 https://learn.microsoft.com/ja-jp/azure-stack/hci/deploy/deployment-install-os
