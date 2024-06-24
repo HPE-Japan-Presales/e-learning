@@ -74,7 +74,7 @@ Reader
 ![](pics/09.PNG)
 ![](pics/10.PNG)
 
-`上記手順に加えてテナントへのCloud アプリケーション管理者 ロールのアクセス許可が必要との記載を2024年6月時点で確認しました。詳しくは下記URLをご参照ください。`
+`※上記手順に加えてテナントへのCloud アプリケーション管理者 ロールのアクセス許可が必要との記載を2024年6月時点で確認しました。詳しくは下記URLをご参照ください。`
 https://learn.microsoft.com/ja-jp/azure-stack/hci/deploy/deployment-arc-register-server-permissions?tabs=powershell
 
 ##### リソースプロバイダーの登録
