@@ -181,7 +181,7 @@ Invoke-AzStackHciArcInitialization -SubscriptionID $Subscription -ResourceGroup 
 ![](pics/39.PNG)
 
 他のサーバも問題なくAzure Arcへ登録されて拡張機能の状態が成功になっていることを確認します。
-もし拡張機能の状態が失敗になった場合は失敗になったサーバのみAzure Arcのサーバの登録を削除して再登録（以下コマンドの再実行）を実施します。
+もし拡張機能の状態が失敗になった場合、こちらが正式な手順が不明確ですが私の環境では失敗になったサーバのみAzure Arcのサーバの登録を削除して再登録（以下コマンドの再実行）を実施して回避していました。
 ```
 Invoke-AzStackHciArcInitialization -SubscriptionID $Subscription -ResourceGroup $RG -TenantID $Tenant -Region $Region -Cloud "AzureCloud" -ArmAccessToken $ARMtoken -AccountID $id
 ```
