@@ -17,3 +17,6 @@ Azure Arcでオンプレの監視をしてみる
 
 - [Azure Arc Enabled Serviceを使ってみる](arc-enabled-service)  
 Azure Arcに対応したAzure PaaSをオンプレで動かしてみる
+
+- [Azure Stack HCI 23H2](cluster-deployment-23H2)  
+Azure Stack HCI 23H2のクラスタデプロイメントのナレッジをまとめています
