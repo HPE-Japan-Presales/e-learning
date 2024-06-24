@@ -142,7 +142,7 @@ Azureアカウントへ接続します。
 Connect-AzAccount -SubscriptionId $Subscription -TenantId $Tenant -DeviceCode
 ```
 ![](pics/24.PNG)
-コマンド実行後、コードが表示されるのでメモやコピーをしておきます。併せてブラウザで　https://microsoft.com/devicelogin　へアクセスします。
+コマンド実行後、コードが表示されるのでメモやコピーをしておきます。併せてブラウザで　<https://microsoft.com/devicelogin>　へアクセスします。
 
 ![](pics/25.PNG)
 アクセス後、コードの入力が求められるので先ほどのコードを入力します。
