@@ -20,9 +20,9 @@ Install-Module AsHciADArtifactsPreCreationTool -Repository PSGallery -Force
 続いてデプロイ用ユーザーとパスワードを指定します。今回は例としてashcideployというユーザー名を使用しています。
 ※ユーザー名とパスワードには以下制限がありますのでご注意ください。
 https://learn.microsoft.com/ja-jp/azure-stack/hci/deploy/deployment-prep-active-directory
-<span style="color:red;">（上記URLより抜粋）ユーザー名のみが指定されていることを確認します。 この名前には、ドメイン名を含めてはなりません。たとえば、 contoso\username 
+`（上記URLより抜粋）ユーザー名のみが指定されていることを確認します。 この名前には、ドメイン名を含めてはなりません。たとえば、 contoso\username 
 ユーザー名は 1 ~ 64 文字にする必要があり、文字、数字、ハイフン、アンダースコアのみを含む必要があり、ハイフンまたは数字で始まる場合はありません。
-パスワードが複雑さと長さの要件を満たしていることを確認します。 12 文字以上で、小文字、大文字、数字、特殊文字を含むパスワードを使用します。</span>
+パスワードが複雑さと長さの要件を満たしていることを確認します。 12 文字以上で、小文字、大文字、数字、特殊文字を含むパスワードを使用します。`
 
 ```
 $password = ConvertTo-SecureString '<password>' -AsPlainText -Force
