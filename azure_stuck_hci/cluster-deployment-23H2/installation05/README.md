@@ -29,7 +29,7 @@ Azure Portalから「Azure Arc」サービスへ移動します。左ペイン�
 ![](pics/06.PNG)
 
 使用するネットワークポートを選択します。管理兼コンピュート用とストレージ用にそれぞれネットワークポートを指定します。指定後、「Customize network settings」を選択します。選択後画面右側に各種設定が表示されるので入力または選択を実施します。
-※「Jumbo frame size(bytes)」や「RDMA protocol」の設定がデプロイする環境と異なると事前チェックまたはデプロイ時にエラーの原因となりますのでご注意ください。
+`※「Jumbo frame size(bytes)」や「RDMA protocol」の設定がデプロイする環境と異なると事前チェックまたはデプロイ時にエラーの原因となりますのでご注意ください。`
 ![](pics/07.PNG)
 
 Azure Stack HCIクラスタに設定するIPアドレス情報を入力します。
