@@ -3,7 +3,7 @@
 
 ## 目次
 ### Azure Stack HCI (Azure Stack HCI OS 23H2 - )
-- [Azure Stack HCIデプロイメント②：Azure Stack HCI OS を設定する](installation03)  
+- [Azure Stack HCIデプロイメント③：Azure Stack HCI OS を設定する](installation03)  
 
 
 #### Azure Stack HCI OSへの設定
