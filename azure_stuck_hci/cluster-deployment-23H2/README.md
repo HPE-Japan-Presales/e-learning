@@ -1,5 +1,5 @@
 # Azure Stack HCI 23H2
-このレポジトリではAzure Stack HCI 23Hのクラスタデプロイメントのナレッジをまとめています。
+このレポジトリではAzure Stack HCI 23H2のクラスタデプロイメントのナレッジをまとめています。
 
 ## 目次
 ### Azure Stack HCI (Azure Stack HCI OS 23H2 - )
