@@ -18,7 +18,7 @@ HDD x4本についてはRAIDを構成しているためOSからは1ボリュー�
 
 構築手順は以下URLを参考にしています。
 https://learn.microsoft.com/ja-jp/azure-stack/hci/deploy/deployment-introduction
-※　2024/04時点での上記URLの内容でセットアップを実施しています。URLの内容をアップロードにより手順変更が起こる可能性もありますので必ずこちらのURLの内容を確認しながら進めてください。
+※　2024/04時点での上記URLの内容でセットアップを実施しています。アップデートにより手順変更が起こる可能性もありますので必ずこちらのURLの内容を確認しながら進めてください。
 
 Azure Stack HCI 23H2からのデプロイに関しての大きな変更はWindows Admin Center(WAC)を使用せずAzure Portalを使用してデプロイを実施する点です。
 デプロイの大まかな流れとしましては、オンプレミス環境で各種設定を実施してAzure Portalからサーバを認識できるようにします。その後Azure Portalからデプロイ作業を実施します。
