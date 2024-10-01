@@ -10,4 +10,4 @@
   - [H100 x2 (NVLINK構成) のGPUドライバのインストール](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/h100/driver_install/driver_install_on_ubuntu2204.md)
   - [GPUドライバをアンインストールする手順](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/h100/driver_install/driver_uninstall_on_ubuntu22.04.4.md)
 - [NVIDIA QUADRO P6000関連](https://github.com/HPE-Japan-Presales/e-learning/tree/main/gpu/p6000)
-
+  - [NVIDIA QUADRO P6000のGPUドライバーのインストール手順（AlmaLinux 9.4）](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/p6000/driver_install/driver_install_on_almalinux9.4.md)
