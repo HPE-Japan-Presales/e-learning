@@ -1,4 +1,4 @@
-# nouveauドライバの無効化
+# nouveauドライバの無効化(Ubuntu 22.04.4 LTS)
 - GPUドライバーをインストールする前に必要な作業
 - OS環境：Ubuntu 22.04.4 LTS
 
