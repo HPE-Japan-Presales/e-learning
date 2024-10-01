@@ -1,4 +1,4 @@
-# GPU関連の技術情報を掲載
+# GPU関連の技術情報
 - [NVIDIA A100関連](https://github.com/HPE-Japan-Presales/e-learning/tree/main/gpu/a100)
 - [GPUドライバーインストール前のOS設定](https://github.com/HPE-Japan-Presales/e-learning/tree/main/gpu/general)
 - [NVIDIA H100関連](https://github.com/HPE-Japan-Presales/e-learning/tree/main/gpu/h100)
