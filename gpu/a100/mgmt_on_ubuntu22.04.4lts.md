@@ -48,7 +48,7 @@
     NVML: Unable to retrieve NVLink information as all links are inActive
 
 # パフォーマンスが最大（Performance StateがP0）になっているかの確認
-    # nvidia-smi_-q_-d_PERFORMANCE
+    # nvidia-smi -q -d PERFORMANCE
     
     ==============NVSMI LOG==============
     
