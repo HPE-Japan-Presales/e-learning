@@ -1,4 +1,4 @@
-# GPUドライバーをインストールする前段階でのOS設定
+# GPUドライバーをインストールする前段階のOS設定（Ubuntu Server 22.04.4 LTS）
 - OS Ubuntu Server 22.04.4 LTS
 - OSインストールでは、HWEカーネルを選択
 
