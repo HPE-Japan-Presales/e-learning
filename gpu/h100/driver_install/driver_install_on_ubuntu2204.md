@@ -1,6 +1,11 @@
 
 # H100 x2 (NVLINK構成) のGPUドライバのインストール
 
+- サーバー： HPE ProLiant DL380a Gen11
+- GPU： NVIDIA H100
+- OS: Ubuntu 22.04.04 LTS
+- カーネル： 6.5.0-35
+
 - 参考情報：　https://forums.developer.nvidia.com/t/nvrm-this-pci-i-o-region-assigned-to-your-nvidia-device-is-invalid/229899
 - "pci=realloc=off"は、PCIブリッジリソースの再割り当てを無効にする設定。BIOSによって割り当てられたリソースをそのまま使用し、カーネルが再割り当てを試みない
 - 現時点で、H100以外のGPUでは、 "pci=realloc=off"が不要だが、場合によっては、このパラメータが必要なこともある可能性あり
