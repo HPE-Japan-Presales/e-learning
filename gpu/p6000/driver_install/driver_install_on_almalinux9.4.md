@@ -1,4 +1,4 @@
-# NVIDIA QUADRO P6000のドライバーインストール
+# NVIDIA QUADRO P6000のGPUドライバーのインストール手順（AlmaLinux 9.4）
 - サーバー： HPE ProLiant DL385p Gen8
 - GPU: NVIDIA QUADRO P6000
 - OS: AlmaLinux 9.4
