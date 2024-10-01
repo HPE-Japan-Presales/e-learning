@@ -9,3 +9,4 @@
 - [Swarm Learning](swarm-learning)
 - [Microsoft](azure_stuck_hci)
 - [Nutanix](nutanix)
+- [GPU](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/README.md)
