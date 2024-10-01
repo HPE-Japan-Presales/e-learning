@@ -1,4 +1,5 @@
-# NVIDIA A100 x2（非NVLINK構成）がUbuntuからどのように見えるのか
+# 非NVLINK構成のNVIDIA A100 x2枚がUbuntuからどう見えるのか
+
 - サーバー：HPE ProLiant DL380 Gen11
 - GPU；NVIDIA A100 x 2枚
 - OS：Ubuntu Server 22.04.4 LTS 
@@ -45,6 +46,44 @@
     NVML: Unable to retrieve NVLink information as all links are inActive
     GPU 1: NVIDIA A100-PCIE-40GB (UUID: GPU-14ac2834-0d81-0508-69eb-e25264c08d21)
     NVML: Unable to retrieve NVLink information as all links are inActive
+
+# パフォーマンスが最大（Performance StateがP0）になっているかの確認
+    # nvidia-smi_-q_-d_PERFORMANCE
+    
+    ==============NVSMI LOG==============
+    
+    Timestamp                                 : Thu Jun 13 17:51:27 2024
+    Driver Version                            : 555.42.02
+    CUDA Version                              : 12.5
+    
+    Attached GPUs                             : 2
+    GPU 00000000:12:00.0
+        Performance State                     : P0
+        Clocks Event Reasons
+            Idle                              : Active
+            Applications Clocks Setting       : Not Active
+            SW Power Cap                      : Not Active
+            HW Slowdown                       : Not Active
+                HW Thermal Slowdown           : Not Active
+                HW Power Brake Slowdown       : Not Active
+            Sync Boost                        : Not Active
+            SW Thermal Slowdown               : Not Active
+            Display Clock Setting             : Not Active
+        Sparse Operation Mode                 : N/A
+    
+    GPU 00000000:8A:00.0
+        Performance State                     : P0
+        Clocks Event Reasons
+            Idle                              : Active
+            Applications Clocks Setting       : Not Active
+            SW Power Cap                      : Not Active
+            HW Slowdown                       : Not Active
+                HW Thermal Slowdown           : Not Active
+                HW Power Brake Slowdown       : Not Active
+            Sync Boost                        : Not Active
+            SW Thermal Slowdown               : Not Active
+            Display Clock Setting             : Not Active
+        Sparse Operation Mode                 : N/A
 
 # ECCが有効になっているか、ECCでエラーがないかの確認
     # nvidia-smi -q -d ECC
