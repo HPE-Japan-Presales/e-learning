@@ -4,7 +4,8 @@
 - [GPUドライバーインストール前のOS設定](https://github.com/HPE-Japan-Presales/e-learning/tree/main/gpu/general)
   - [nouveauドライバの無効化(AlmaLinux 9.4)](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/general/disable_nouveau_on_almalinux.md)
   - [nouveauドライバの無効化(Ubuntu 22.04.4 LTS)](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/general/disable_nouveau_on_ubuntu.md)
-
+  - [GPUドライバーをインストールする前段階のOS設定（Ubuntu Server 22.04.4 LTS）](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/general/ubuntu_22.04.4_lts_setup.md)
+   
 # A100
 - [NVIDIA A100関連](https://github.com/HPE-Japan-Presales/e-learning/tree/main/gpu/a100)
   - [非NVLINK構成のNVIDIA A100 x2枚がUbuntuからどう見えるのか](https://github.com/HPE-Japan-Presales/e-learning/blob/main/gpu/a100/mgmt_on_ubuntu22.04.4lts.md)
