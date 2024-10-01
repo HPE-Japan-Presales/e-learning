@@ -131,3 +131,85 @@
                Link 16: <inactive>
                Link 17: <inactive>
 
+# NVLINKされたGPUの動作確認サンプルプログラムの実行
+- NVLINKされたGPUのP2P通信の確認
+
+      # su - testuser01
+      $ whoami
+      testuser01
+      testuser01@dl380ag11:~$ git clone https://github.com/NVIDIA/cuda-samples
+      $ cd /home/testuser01/cuda-samples/Samples/0_Introduction/simpleP2P/
+      $ make
+      testuser01@dl380ag11:~/cuda-samples/Samples/0_Introduction/simpleP2P$ ./simpleP2P 
+      [./simpleP2P] - Starting...
+      Checking for multiple GPUs...
+      CUDA-capable device count: 2
+      
+      Checking GPU(s) for support of peer to peer memory access...
+      > Peer access from NVIDIA H100 PCIe (GPU0) -> NVIDIA H100 PCIe (GPU1) : Yes
+      > Peer access from NVIDIA H100 PCIe (GPU1) -> NVIDIA H100 PCIe (GPU0) : Yes
+      Enabling peer access between GPU0 and GPU1...
+      Allocating buffers (64MB on GPU0, GPU1 and CPU Host)...
+      Creating event handles...
+      cudaMemcpyPeer / cudaMemcpy between GPU0 and GPU1: 236.01GB/s
+      Preparing host buffer and memcpy to GPU0...
+      Run kernel on GPU1, taking source data from GPU0 and writing to GPU1...
+      Run kernel on GPU0, taking source data from GPU1 and writing to GPU0...
+      Copy data back to host from GPU0 and verify results...
+      Disabling peer access...
+      Shutting down...
+      Test passed
+
+- P2P通信帯域計測
+
+      $ cd /home/testuser01/cuda-samples/Samples/5_Domain_Specific/p2pBandwidthLatencyTest
+      $ make
+      $ ./p2pBandwidthLatencyTest 
+      [P2P (Peer-to-Peer) GPU Bandwidth Latency Test]
+      Device: 0, NVIDIA H100 PCIe, pciBusID: c2, pciDeviceID: 0, pciDomainID:0
+      Device: 1, NVIDIA H100 PCIe, pciBusID: d5, pciDeviceID: 0, pciDomainID:0
+      Device=0 CAN Access Peer Device=1
+      Device=1 CAN Access Peer Device=0
+      
+      ***NOTE: In case a device doesn't have P2P access to other one, it falls back to normal memcopy procedure.
+      So you can see lesser Bandwidth (GB/s) and unstable Latency (us) in those cases.
+      
+      P2P Connectivity Matrix
+           D\D     0     1
+           0       1     1
+           1       1     1
+      Unidirectional P2P=Disabled Bandwidth Matrix (GB/s)
+         D\D     0      1 
+           0 1622.17  26.10 
+           1  25.00 1634.15 
+      Unidirectional P2P=Enabled Bandwidth (P2P Writes) Matrix (GB/s)
+         D\D     0      1 
+           0 1634.15 256.62 
+           1 256.99 1660.74 
+      Bidirectional P2P=Disabled Bandwidth Matrix (GB/s)
+         D\D     0      1 
+           0 1669.42  35.17 
+           1  35.23 1671.85 
+      Bidirectional P2P=Enabled Bandwidth Matrix (GB/s)
+         D\D     0      1 
+           0 1667.81 509.35 
+           1 509.15 1669.81 
+      P2P=Disabled Latency Matrix (us)
+         GPU     0      1 
+           0   2.34  16.59 
+           1  16.48   2.31 
+      
+         CPU     0      1 
+           0   2.21   6.29 
+           1   6.20   2.14 
+      P2P=Enabled Latency (P2P Writes) Matrix (us)
+         GPU     0      1 
+           0   2.35   2.56 
+           1   2.52   2.31 
+      
+         CPU     0      1 
+           0   2.24   1.72 
+           1   1.75   2.18 
+
+
+[KOGA MASAZUMI](https://www.amazon.co.jp/stores/%E5%8F%A4%E8%B3%80%E6%94%BF%E7%B4%94/author/B0725M9C6T) ([@masazumi_koga](https://x.com/masazumi_koga))
