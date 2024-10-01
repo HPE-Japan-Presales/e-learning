@@ -106,9 +106,10 @@
                 SRAM PCIE                     : 0
                 SRAM Other                    : 0
 
+# GPU名、PICバスID、VBIOSバージョン、温度、使用率、搭載VRAM容量、VRAM空き容量、VRAM使用量、グラフィクスクロック周波数、VRAN周波数を確認する
+        # nvidia-smi --query-gpu gpu_name gpu_bus_id vbios_version temperature.gpu utilization.gpu memory.total memory.free memory.used clocks.applications.graphics clocks.applications.memory --format csv
+        name, pci.bus_id, vbios_version, temperature.gpu, utilization.gpu [%], memory.total [MiB], memory.free [MiB], memory.used [MiB], clocks.applications.graphics [MHz], clocks.applications.memory [MHz]
+        NVIDIA A100-PCIE-40GB, 00000000:12:00.0, 92.00.25.00.08, 39, 0 %, 40960 MiB, 40447 MiB, 1 MiB, 765 MHz, 1215 MHz
+        NVIDIA A100-PCIE-40GB, 00000000:8A:00.0, 92.00.25.00.08, 37, 0 %, 40960 MiB, 40447 MiB, 1 MiB, 765 MHz, 1215 MHz
 
-
-
-
-
-    
+[KOGA MASAZUMI](https://www.amazon.co.jp/stores/%E5%8F%A4%E8%B3%80%E6%94%BF%E7%B4%94/author/B0725M9C6T) ([@masazumi_koga](https://x.com/masazumi_koga))
