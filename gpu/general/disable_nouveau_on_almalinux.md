@@ -1,4 +1,5 @@
-# nouveauドライバの無効化
+# nouveauドライバの無効化(AlmaLinux 9.4)
+
 - GPUドライバーをインストールする前に必要な作業
 - OS環境：AlmaLinux 9.4
 
